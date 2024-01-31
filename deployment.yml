@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: online-web-app
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: online-web-app
+  template: 
+    metadata: 
+      labels: 
+        app: online-web-app
+    spec: 
+      containers: 
+      - name: online-web-app-cont
+        image: lnxadm1991/online-web-app
+        ports: 
+        - containerPort: 80 
